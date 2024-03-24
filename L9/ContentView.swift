@@ -63,7 +63,7 @@ struct ContentView: View {
                 startLocation = startLocation ?? location
             }
             .onEnded { _ in
-                withAnimation {
+                withAnimation(.interpolatingSpring(stiffness: 170, damping: 15)) {
                     location = ContentView.center
                     updateDiameter()
                 }
